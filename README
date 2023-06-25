@@ -1,10 +1,10 @@
-## Memory Terminology usaged with their meanings
+## Memory Terminology usage with their meanings
 
 -  Alloc uint64
    - Alloc is bytes of allocated heap objects.
-"Allocated" heap objects include all reachable objects, as well as unreachable objects that the garbage collector has not yet freed.
-   - Specifically, Alloc increases as heap objects are allocated and decreases as the heap is swept and unreachable objects are freed.
-   - Sweeping occurs incrementally between GC cycles, so these two processes occur simultaneously, and as a result Alloc tends to change smoothly (in contrast with the sawtooth that is typical of stop-the-world garbage collectors).
+"Allocated" heap objects include all reachable objects and unreachable objects that the garbage collector has not yet freed.
+   - Specifically, Alloc increases as heap objects are allocated and decrease as the heap is swept and unreachable objects are freed.
+   - Sweeping occurs incrementally between GC cycles, so these two processes occur simultaneously. As a result, Alloc tends to change smoothly (in contrast with the sawtooth typical of stop-the-world garbage collectors).
 - TotalAlloc uint64
   - TotalAlloc is cumulative bytes allocated for heap objects.
   - TotalAlloc increases as heap objects are allocated, but unlike Alloc and HeapAlloc, it does not decrease when objects are freed.
